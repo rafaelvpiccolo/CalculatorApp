@@ -26,14 +26,14 @@
         android:ems="10"
         android:gravity="end"
         android:hint="@string/zero"
-        android:inputType="numberDecimal"
         android:focusable="false"
         android:padding="20dp"
         android:textAlignment="textEnd"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:inputType="numberDecimal" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -134,7 +134,7 @@
                 style="?android:buttonBarButtonStyle"/>
 
             <Button
-                android:id="@+id/ButtonMinus"
+                android:id="@+id/buttonMinus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -240,6 +240,24 @@
                 android:text="@string/delete"
                 android:textSize="29sp"
                 style="?android:buttonBarButtonStyle"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/buttonEqual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="5dp"
+                android:text="@string/equal"
+                android:textSize="30sp"
+                style="?android:buttonBarButtonStyle"/>
+
         </TableRow>
 
     </LinearLayout>

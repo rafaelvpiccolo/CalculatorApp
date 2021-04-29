@@ -17,4 +17,5 @@
     <string name="dot">.</string>
     <string name="deleteAll">C</string>
     <string name="delete">DEL</string>
+    <string name="equal">=</string>
 </resources>
