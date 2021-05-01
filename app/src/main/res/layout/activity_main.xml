@@ -31,7 +31,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:maxLength="15"/>
 
     <LinearLayout
         android:layout_width="wrap_content"

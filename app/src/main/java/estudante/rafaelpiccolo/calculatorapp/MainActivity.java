@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,6 +48,11 @@ public class MainActivity extends AppCompatActivity {
         btn0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(calc.getText().length() == 15){
+                    Toast.makeText(getApplicationContext(), "It is not possible to exceed 15 digits.",
+                            Toast.LENGTH_SHORT).show();
+                }
+
                 if(TextUtils.isEmpty(calc.getText().toString())){
                     calc.setText("0");
                 }
@@ -62,6 +68,11 @@ public class MainActivity extends AppCompatActivity {
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(calc.getText().length() == 15){
+                    Toast.makeText(getApplicationContext(), "It is not possible to exceed 15 digits.",
+                            Toast.LENGTH_SHORT).show();
+                }
+
                 if(TextUtils.isEmpty(calc.getText().toString())){
                     calc.setText("1");
                 }
@@ -77,6 +88,11 @@ public class MainActivity extends AppCompatActivity {
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(calc.getText().length() == 15){
+                    Toast.makeText(getApplicationContext(), "It is not possible to exceed 15 digits.",
+                            Toast.LENGTH_SHORT).show();
+                }
+
                 if(TextUtils.isEmpty(calc.getText().toString())){
                     calc.setText("2");
                 }
@@ -92,6 +108,11 @@ public class MainActivity extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(calc.getText().length() == 15){
+                    Toast.makeText(getApplicationContext(), "It is not possible to exceed 15 digits.",
+                            Toast.LENGTH_SHORT).show();
+                }
+
                 if(TextUtils.isEmpty(calc.getText().toString())){
                     calc.setText("3");
                 }
@@ -107,6 +128,11 @@ public class MainActivity extends AppCompatActivity {
         btn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(calc.getText().length() == 15){
+                    Toast.makeText(getApplicationContext(), "It is not possible to exceed 15 digits.",
+                            Toast.LENGTH_SHORT).show();
+                }
+
                 if(TextUtils.isEmpty(calc.getText().toString())){
                     calc.setText("4");
                 }
@@ -122,6 +148,11 @@ public class MainActivity extends AppCompatActivity {
         btn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(calc.getText().length() == 15){
+                    Toast.makeText(getApplicationContext(), "It is not possible to exceed 15 digits.",
+                            Toast.LENGTH_SHORT).show();
+                }
+
                 if(TextUtils.isEmpty(calc.getText().toString())){
                     calc.setText("5");
                 }
@@ -137,6 +168,11 @@ public class MainActivity extends AppCompatActivity {
         btn6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(calc.getText().length() == 15){
+                    Toast.makeText(getApplicationContext(), "It is not possible to exceed 15 digits.",
+                            Toast.LENGTH_SHORT).show();
+                }
+
                 if(TextUtils.isEmpty(calc.getText().toString())){
                     calc.setText("6");
                 }
@@ -152,6 +188,11 @@ public class MainActivity extends AppCompatActivity {
         btn7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(calc.getText().length() == 15){
+                    Toast.makeText(getApplicationContext(), "It is not possible to exceed 15 digits.",
+                            Toast.LENGTH_SHORT).show();
+                }
+
                 if(TextUtils.isEmpty(calc.getText().toString())){
                     calc.setText("7");
                 }
@@ -167,6 +208,11 @@ public class MainActivity extends AppCompatActivity {
         btn8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(calc.getText().length() == 15){
+                    Toast.makeText(getApplicationContext(), "It is not possible to exceed 15 digits.",
+                            Toast.LENGTH_SHORT).show();
+                }
+
                 if(TextUtils.isEmpty(calc.getText().toString())){
                     calc.setText("8");
                 }
@@ -182,6 +228,11 @@ public class MainActivity extends AppCompatActivity {
         btn9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(calc.getText().length() == 15){
+                    Toast.makeText(getApplicationContext(), "It is not possible to exceed 15 digits.",
+                            Toast.LENGTH_SHORT).show();
+                }
+
                 if(TextUtils.isEmpty(calc.getText().toString())){
                     calc.setText("9");
                 }
@@ -197,6 +248,11 @@ public class MainActivity extends AppCompatActivity {
         btnDot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(calc.getText().length() == 15){
+                    Toast.makeText(getApplicationContext(), "It is not possible to exceed 15 digits.",
+                            Toast.LENGTH_SHORT).show();
+                }
+
                 String text = calc.getText().toString();
                 String character = ".";
                 if(TextUtils.isEmpty(calc.getText().toString()) && !text.contains(character)){
@@ -233,6 +289,10 @@ public class MainActivity extends AppCompatActivity {
         btnPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(calc.getText().length() == 15){
+                    Toast.makeText(getApplicationContext(), "It is not possible to exceed 15 digits.",
+                            Toast.LENGTH_SHORT).show();
+                }
 
                 if (!TextUtils.isEmpty(calc.getText().toString()) && opButton) {
                     String actualValue = String.valueOf(calc.getText());
@@ -246,6 +306,10 @@ public class MainActivity extends AppCompatActivity {
         btnMinus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(calc.getText().length() == 15){
+                    Toast.makeText(getApplicationContext(), "It is not possible to exceed 15 digits.",
+                            Toast.LENGTH_SHORT).show();
+                }
 
                 if (!TextUtils.isEmpty(calc.getText().toString()) && opButton) {
                     String actualValue = String.valueOf(calc.getText());
@@ -259,6 +323,10 @@ public class MainActivity extends AppCompatActivity {
         btnMulti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(calc.getText().length() == 15){
+                    Toast.makeText(getApplicationContext(), "It is not possible to exceed 15 digits.",
+                            Toast.LENGTH_SHORT).show();
+                }
 
                 if (!TextUtils.isEmpty(calc.getText().toString()) && opButton) {
                     String actualValue = String.valueOf(calc.getText());
