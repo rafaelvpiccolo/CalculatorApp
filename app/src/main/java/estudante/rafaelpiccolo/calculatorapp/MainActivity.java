@@ -10,6 +10,8 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
+    boolean opButton = true;
+
     EditText calc;
 
     Button btn0
@@ -53,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
                     String newValue = actualValue+"0";
                     calc.setText(newValue);
                 }
+                opButton = true;
             }
         });
 
@@ -67,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                     String newValue = actualValue+"1";
                     calc.setText(newValue);
                 }
+                opButton = true;
             }
         });
 
@@ -81,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
                     String newValue = actualValue+"2";
                     calc.setText(newValue);
                 }
+                opButton = true;
             }
         });
 
@@ -95,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
                     String newValue = actualValue+"3";
                     calc.setText(newValue);
                 }
+                opButton = true;
             }
         });
 
@@ -109,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
                     String newValue = actualValue+"4";
                     calc.setText(newValue);
                 }
+                opButton = true;
             }
         });
 
@@ -123,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
                     String newValue = actualValue+"5";
                     calc.setText(newValue);
                 }
+                opButton = true;
             }
         });
 
@@ -137,6 +145,7 @@ public class MainActivity extends AppCompatActivity {
                     String newValue = actualValue+"6";
                     calc.setText(newValue);
                 }
+                opButton = true;
             }
         });
 
@@ -151,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
                     String newValue = actualValue+"7";
                     calc.setText(newValue);
                 }
+                opButton = true;
             }
         });
 
@@ -165,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
                     String newValue = actualValue+"8";
                     calc.setText(newValue);
                 }
+                opButton = true;
             }
         });
 
@@ -178,6 +189,82 @@ public class MainActivity extends AppCompatActivity {
                     String actualValue = String.valueOf(calc.getText());
                     String newValue = actualValue+"9";
                     calc.setText(newValue);
+                }
+                opButton = true;
+            }
+        });
+
+        btnDot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String text = calc.getText().toString();
+                String character = ".";
+                if(TextUtils.isEmpty(calc.getText().toString()) && !text.contains(character)){
+                    calc.setText("0.");
+                }
+                else if(!text.contains(character)){
+                    String actualValue = String.valueOf(calc.getText());
+                    String newValue = actualValue+".";
+                    calc.setText(newValue);
+                }
+            }
+        });
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int length = calc.getText().length();
+                if (length > 0) {
+                    calc.getText().delete(length - 1, length);
+                }
+            }
+        });
+
+        btnDeleteAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int length = calc.getText().length();
+                if (length > 0) {
+                    calc.getText().delete(0, length);
+                }
+            }
+        });
+
+        btnPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (!TextUtils.isEmpty(calc.getText().toString()) && opButton) {
+                    String actualValue = String.valueOf(calc.getText());
+                    String newValue = actualValue+"+";
+                    calc.setText(newValue);
+                    opButton = false;
+                }
+            }
+        });
+
+        btnMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (!TextUtils.isEmpty(calc.getText().toString()) && opButton) {
+                    String actualValue = String.valueOf(calc.getText());
+                    String newValue = actualValue+"-";
+                    calc.setText(newValue);
+                    opButton = false;
+                }
+            }
+        });
+
+        btnMulti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (!TextUtils.isEmpty(calc.getText().toString()) && opButton) {
+                    String actualValue = String.valueOf(calc.getText());
+                    String newValue = actualValue+"x";
+                    calc.setText(newValue);
+                    opButton = false;
                 }
             }
         });
