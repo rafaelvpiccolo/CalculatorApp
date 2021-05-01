@@ -1,7 +1,5 @@
 package estudante.rafaelpiccolo.calculatorapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -9,9 +7,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import static estudante.rafaelpiccolo.calculatorapp.Eval.eval;
+
 public class MainActivity extends AppCompatActivity {
 
     boolean opButton = true;
+    boolean numberDotButton = false;
+    boolean opDotButton = false;
+    boolean dotButton = false;
 
     EditText calc;
 
@@ -62,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
                     calc.setText(newValue);
                 }
                 opButton = true;
+                numberDotButton = true;
             }
         });
 
@@ -82,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
                     calc.setText(newValue);
                 }
                 opButton = true;
+                numberDotButton = true;
             }
         });
 
@@ -102,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
                     calc.setText(newValue);
                 }
                 opButton = true;
+                numberDotButton = true;
             }
         });
 
@@ -122,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
                     calc.setText(newValue);
                 }
                 opButton = true;
+                numberDotButton = true;
             }
         });
 
@@ -142,6 +151,7 @@ public class MainActivity extends AppCompatActivity {
                     calc.setText(newValue);
                 }
                 opButton = true;
+                numberDotButton = true;
             }
         });
 
@@ -162,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
                     calc.setText(newValue);
                 }
                 opButton = true;
+                numberDotButton = true;
             }
         });
 
@@ -182,6 +193,7 @@ public class MainActivity extends AppCompatActivity {
                     calc.setText(newValue);
                 }
                 opButton = true;
+                numberDotButton = true;
             }
         });
 
@@ -202,6 +214,7 @@ public class MainActivity extends AppCompatActivity {
                     calc.setText(newValue);
                 }
                 opButton = true;
+                numberDotButton = true;
             }
         });
 
@@ -222,6 +235,7 @@ public class MainActivity extends AppCompatActivity {
                     calc.setText(newValue);
                 }
                 opButton = true;
+                numberDotButton = true;
             }
         });
 
@@ -242,6 +256,7 @@ public class MainActivity extends AppCompatActivity {
                     calc.setText(newValue);
                 }
                 opButton = true;
+                numberDotButton = true;
             }
         });
 
@@ -258,10 +273,12 @@ public class MainActivity extends AppCompatActivity {
                 if(TextUtils.isEmpty(calc.getText().toString()) && !text.contains(character)){
                     calc.setText("0.");
                 }
-                else if(!text.contains(character)){
+                else if(numberDotButton && opDotButton || !text.contains(character) ){
                     String actualValue = String.valueOf(calc.getText());
                     String newValue = actualValue+".";
                     calc.setText(newValue);
+                    numberDotButton = false;
+                    opDotButton = false;
                 }
             }
         });
@@ -299,7 +316,9 @@ public class MainActivity extends AppCompatActivity {
                     String newValue = actualValue+"+";
                     calc.setText(newValue);
                     opButton = false;
+                    numberDotButton = false;
                 }
+                opDotButton = true;
             }
         });
 
@@ -316,7 +335,9 @@ public class MainActivity extends AppCompatActivity {
                     String newValue = actualValue+"-";
                     calc.setText(newValue);
                     opButton = false;
+                    numberDotButton = false;
                 }
+                opDotButton = true;
             }
         });
 
@@ -333,6 +354,25 @@ public class MainActivity extends AppCompatActivity {
                     String newValue = actualValue+"x";
                     calc.setText(newValue);
                     opButton = false;
+                    numberDotButton = false;
+                }
+                opDotButton = true;
+            }
+        });
+
+        btnEqual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if(!TextUtils.isEmpty(calc.getText().toString())){
+                String expression = calc.getText().toString();
+                String newResult;
+
+                double result = eval(expression);
+                newResult = String.valueOf(result);
+
+                calc.setText(newResult);
+                opButton = true;
                 }
             }
         });
